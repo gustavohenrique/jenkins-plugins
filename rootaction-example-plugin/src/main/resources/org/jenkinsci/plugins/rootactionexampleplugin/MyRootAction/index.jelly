@@ -1,0 +1,46 @@
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout" xmlns:f="/lib/form">
+<l:layout norefresh="true">
+    
+    <l:main-panel>
+        
+        <h1>${it.displayName}</h1>
+        
+        <f:form method="POST" action="save">
+            <table>
+                <tr>
+                    <td><h2>Name</h2></td>
+                </tr>
+                <tr>
+                    <td>
+                         <f:textbox name="name" value="${it.person.name}"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><h2>Phones</h2></td>
+                </tr>
+                <tr>
+                    <td>
+                         <f:repeatable name="phones" var="phone" items="${it.person.phones}" add="${Add}" minimum="1">
+                             <table cellpadding="2" cellspacing="2">
+                                 <tbody>
+                                     <tr>
+                                         <td>Phone:</td>
+                                         <td width="200"><f:textbox name="phone" value="${phone}"/></td>
+                                         <td width="50"><f:repeatableDeleteButton/></td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+                         </f:repeatable>
+                    </td>
+                </tr>
+            </table>       
+            <p>
+                <f:submit value="Save"/>
+            </p>
+          
+        </f:form>
+        
+    </l:main-panel>
+  </l:layout>
+</j:jelly>
