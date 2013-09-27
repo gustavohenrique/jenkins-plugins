@@ -1,5 +1,7 @@
 target
+work
 *.class
 .eclipse
 .settings
 .classpath
+.project

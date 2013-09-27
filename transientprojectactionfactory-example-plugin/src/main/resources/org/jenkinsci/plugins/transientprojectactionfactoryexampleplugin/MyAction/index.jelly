@@ -1,0 +1,38 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:f="/lib/form">
+<l:layout norefresh="true">
+    <st:include page="sidepanel.jelly" />
+    
+    <l:main-panel>
+    
+      <h1>${it.displayName}</h1>
+      
+      <f:form action="save" method="POST">
+      
+          <table name="myProject" cellspacing="2" cellpadding="2">
+              <tbody>
+                  <tr>
+                      <td>Owner</td>
+                      <td>
+                          <f:textbox name="owner" value="${it.myProject.owner}"/>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>URL</td>
+                      <td>
+                          <select name="url">
+                              <j:forEach var="url" items="${it.urls}">
+                                  <f:option value="${url}" selected="${it.myProject.url == url}">${url}</f:option>
+                              </j:forEach>
+                          </select>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <p>
+              <f:submit value="Save"/>
+          </p>
+      </f:form>
+    </l:main-panel>
+</l:layout>
+</j:jelly>

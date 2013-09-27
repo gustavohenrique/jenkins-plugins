@@ -1,0 +1,7 @@
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout" xmlns:f="/lib/form">
+  <l:side-panel>
+    <l:tasks>
+      <l:task icon="${it.iconFileName}" href="${it.urlName}" title="${it.displayName}"/>
+    </l:tasks>
+ </l:side-panel>
+</j:jelly>

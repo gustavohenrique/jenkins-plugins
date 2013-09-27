@@ -1,0 +1,19 @@
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout" xmlns:f="/lib/form">
+
+<h2>${it.displayName}</h2>
+
+<table border="1" class="pane bigtable hover">
+  <thead>
+      <tr>
+          <th>Owner</th>
+          <th>URL</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>${it.myProject.owner}</td>
+          <td>${it.myProject.url}</td>
+      </tr>
+  </tbody>
+</table>
+</j:jelly>
